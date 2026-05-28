@@ -8,8 +8,11 @@ workflows:
         - bobrvpn_keystore
       groups:
         - google_play_credentials
+    git:
+      depth: 1
+      submodules: false
     scripts:
-      - name: Force HTTPS for all git submodules
+      - name: Init submodules via HTTPS
         script: |
           git config --global url."https://github.com/".insteadOf "git@github.com:"
           git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
