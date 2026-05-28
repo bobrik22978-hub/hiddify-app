@@ -57,7 +57,8 @@ jobs:
 
 
   build:
-    needs: test
+    needs: [test]
+    if: always()
     permissions: write-all
     continue-on-error: true
 
