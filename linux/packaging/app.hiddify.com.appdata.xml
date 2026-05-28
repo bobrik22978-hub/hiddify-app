@@ -4,14 +4,14 @@
   Place this file at: linux/packaging/myappid.appdata.xml
 -->
 <component type="desktop-application">
-  <id>app.hiddify.com</id>
+  <id>com.bobrvpn.app</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
-  <name>Hiddify</name>
+  <name>Bobrvpn</name>
   <summary>Modern Proxy and VPN Manager for Linux</summary>
 
-  <developer_name>Hiddify</developer_name>
+  <developer_name>Bobrvpn</developer_name>
   <update_contact>linux@hiddify.com</update_contact>
 
   <description>
@@ -42,7 +42,7 @@
   </categories>
 
   <keywords>
-    <keyword>Hiddify</keyword>
+    <keyword>Bobrvpn</keyword>
     <keyword>Proxy</keyword>
     <keyword>VPN</keyword>
     <keyword>V2Ray</keyword>
