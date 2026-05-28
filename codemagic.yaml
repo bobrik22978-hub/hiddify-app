@@ -4,24 +4,25 @@ workflows:
     max_build_duration: 120
     environment:
       flutter: stable
-      xcode: latest
       android_signing:
         - bobrvpn_keystore
       groups:
         - google_play_credentials
     scripts:
-      - name: Clone submodules
+      - name: Force HTTPS for all git submodules
         script: |
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
+          git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
           git submodule update --init --recursive --depth 1
-          
+
       - name: Install dependencies
         script: |
           flutter pub get
-          
+
       - name: Build APK
         script: |
           flutter build apk --release --split-per-abi --build-name=1.0.0 --build-number=$(date +%s)
-        
+
       - name: Build AAB
         script: |
           flutter build appbundle --release --build-name=1.0.0 --build-number=$(date +%s)
